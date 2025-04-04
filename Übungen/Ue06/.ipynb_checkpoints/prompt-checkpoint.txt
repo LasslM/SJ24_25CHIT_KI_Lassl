@@ -1,0 +1,43 @@
+
+Erstelle die Spezifikation der vier API-Endpunkte mithilfe einer generativen KI. Achte dabei darauf, die firmeninternen Vorgaben zu Form und Aufbau der Definition einzuhalten. Dein Kollege hat dir dazu zwei Beispiele aus einem anderen Projekt als Vorlage bereitgestellt. 
+
+
+Prompt= """
+
+Aufgabe: 
+Ziel ist die Entwicklung eines Produktmanagement-Systems. Das geplante System soll eine API bereitstellen, die die Verwaltung von Produktdaten ermöglicht. 
+
+Spezifikationen: 
+Diese API soll anderen Anwendungen eine definierte Schnittstelle für die folgenden Operationen bieten: Das geplante Produktmanagement-System soll über eine zentrale API verfügen, die verschiedene Operationen zur Verwaltung von Produktdaten ermöglicht. Die API muss Entwicklern eine Möglichkeit bieten, alle in der Datenbank gespeicherten Produkte abzurufen. Zusätzlich soll eine Filterfunktion implementiert werden, um gezielt nach Produkten anhand ihres Namens zu suchen. Die Produktinformationen, die bei diesen Abfragen bereitgestellt werden, umfassen grundlegende Details wie den Namen des Produkts, den Preis und eine kurze Beschreibung. Darüber hinaus ist ein Endpunkt erforderlich, der das Hinzufügen neuer Produkte ermöglicht. Entwickler sollen in der Lage sein, alle relevanten Produktinformationen zu übermitteln, damit diese korrekt in die Datenbank eingetragen werden. Ebenso wichtig ist ein Mechanismus zur Bearbeitung bestehender Produktdaten. Es muss sichergestellt werden, dass Produktinformationen bei Bedarf durch entsprechende Schreib-Operationen aktualisiert werden können. Schließlich soll die API auch die Löschung von Produkten unterstützen, um nicht mehr benötigte Einträge aus der Datenbank zu entfernen. Diese Operationen sollen so definiert werden, dass die API einfach und sicher in verschiedene Frontend-Systeme oder Drittanwendungen eingebunden werden kann. Ziel ist es, eine API zu schaffen, die die Integration in verschiedene Frontend-Systeme oder Drittanwendungen ermöglicht. Deine Aufgabe in diesem Projekt ist es, die erforderlichen API-Endpunkte zu definieren und deren Funktionalität klar und verständlich zu beschreiben, sodass andere Entwickler problemlos damit arbeiten können. 
+
+Orientier dich an folgenden Beispiel aus einem anderem Projekt:
+
+Beispiel 1
+
+Endpunkt: /api/products   
+Methode: GET   
+Beschreibung: Gibt eine Liste aller Produkte zurück.   
+Parameter:     
+	- name (optional): Filtert die Produkte nach ihrem Namen.   
+Antwort:     
+	- Status 200:       
+		- Inhalt: Liste von Objekten mit ‚id‘ und ‚name‘. 
+	- Status 404: Keine Produkte gefunden.   
+
+
+
+Beispiel 2
+
+Endpunkt: /api/orders   
+Methode: POST   
+Beschreibung: Erstellt einen neuen Eintrag in der Bestelldatenbank.   
+Körper:   
+	- ‚product_id‘ (erforderlich): Die ID des zu bestellenden Produkts.     
+	- ‚quantity‘ (erforderlich): Die Menge des Produkts.   
+Antwort:     
+	- Status 201: Bestell-Eintrag erfolgreich erstellt.     
+	- Status 400: Fehlerhafte Anfrage (z. B. fehlende Parameter).
+
+
+
+"""
